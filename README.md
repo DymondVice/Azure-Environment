@@ -27,8 +27,8 @@ Load balancing ensures that the application will be highly _____, in addition to
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+-Filebeat is for Forwarding and centralizing log data. it monitors the log files or loactions that youre are being specified, collects the logged events and forwards them to either elasticseartch or Logstash.
+- Metricbeat is a lightweight shipper that you can installl on your servers to periodically collect metrics from the operation system and from other services running on the servers. it takes the metcis and statistics that it collects and ships them to the output that you specify like Elasticsearch or Logstash.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -36,7 +36,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
 | Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
+| ELK      |Monitoring| 10.1.0.4   | Linux            |                  |
 | TODO     |          |            |                  |
 | TODO     |          |            |                  |
 
