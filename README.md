@@ -8,7 +8,7 @@ https://github.com/DymondVice/AzureLabs/blob/c32db6533c94ea4c6f138edc0b5ff19113b
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
-  https://github.com/DymondVice/AzureLabs/blob/30bf5c6d605f437fe315b9fe61f0168e0854493f/AnsiblePlaybook
+  
 
 This document contains the following details:
 - Description of the Topologu
