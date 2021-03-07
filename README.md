@@ -65,9 +65,13 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 The main advantage of using Ansible is that it helps to allow the IT admins to automate the toiling from the daily taskts. That then Helps to free them to focus their efforts on other things to help deliver more value to the business and by spending time on the more important tasks.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- First for my playbook i made the YAML file and started with --- then to name: config Web VM with docker so i could start there
+- then i used ansible apt module to install the docker.io and python3-pip, with the update_cache so it will install the docker.io (its similar to running apt get)
+- so with the [update_cache: yes] i will use the ip module to install docker.
+- then i will run - name: Install Python Docker Module so that ansible can utilize the module to control docker containers.
+- Used the Ansible docker-container module to install the cyberxsecuirty/dvwa container and published it to port 80 on the container to port 80 on the host
+- i put my [restart_policy: always] to ensure that the container restarts if you restart the web vm. without it i would have to restart my container when i restart the machine.
+- last i put in the [systemd] module to restart the docker service when the machine reboots.
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -75,13 +79,20 @@ https://github.com/DymondVice/Azure-Environment/blob/bbdf3e9b35fb1d6924695e86f50
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+| Name  | Monitoring  | IP of machine |
+|-------|-------------|---------------|
+| Web-1 | YES         | 10.0.0.5      |
+| Web-2 | YES         | 10.0.0.6      |
+| Web-3 | YES         | 10.0.0.7      |
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
-
+| Name  | BEATS       | IP of machine |
+|-------|-------------|---------------|
+| Web-1 | Metric/file | 10.0.0.5      |
+| Web-2 | Metric/file | 10.0.0.6      |
+| Web-3 | Metric/file | 10.0.0.7      |
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- The types of data that my beats collect (file/metricbeat) are both a "lightweight shipper" filebeat is for forwarding and centralzing log data, just to help you keep the more plain things simple and offer a much ligher weight to forward them and centralize logs and the files that they belong with. Metricbeat is more for the metrics. With metricbeat the systems collect info from the CPU to memory, Redis to NGINX and a lot more. you should be getting all your data in a central area with both metric/filebeat that makes it easy to see and very human readable.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
