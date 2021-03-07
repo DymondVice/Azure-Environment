@@ -4,7 +4,7 @@ Azure Network
 
 The files in this repository were used to configure the network depicted below.
 
-https://github.com/DymondVice/AzureLabs/blob/c32db6533c94ea4c6f138edc0b5ff19113b032bf/NetworkDiagram.png
+https://github.com/DymondVice/AzureLabs/blob/e9f6518189d002a0dad0ac16d64d752c5031048d/AzureNetworkDiagram.png
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
