@@ -91,8 +91,9 @@ We have installed the following Beats on these machines:
 | Web-1 | Metric/file | 10.0.0.5      |
 | Web-2 | Metric/file | 10.0.0.6      |
 | Web-3 | Metric/file | 10.0.0.7      |
+
 These Beats allow us to collect the following information from each machine:
-- The types of data that my beats collect (file/metricbeat) are both a "lightweight shipper" filebeat is for forwarding and centralzing log data, just to help you keep the more plain things simple and offer a much ligher weight to forward them and centralize logs and the files that they belong with. Metricbeat is more for the metrics. With metricbeat the systems collect info from the CPU to memory, Redis to NGINX and a lot more. you should be getting all your data in a central area with both metric/filebeat that makes it easy to see and very human readable.
+- The data that my beats collect (file/metricbeat) are both a "lightweight shipper" filebeat is for forwarding and centralzing log data, just to help you keep the more plain things simple and offer a much ligher weight to forward them and centralize logs and the files that they belong with. Metricbeat is more for the metrics. With metricbeat the systems collect info from the CPU to memory, Redis to NGINX and a lot more. you should be getting all your data in a central area with both metric/filebeat that makes it easy to see and very human readable.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
